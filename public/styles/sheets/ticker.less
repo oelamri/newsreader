@@ -1,0 +1,54 @@
+#ticker {
+	width: 300px;
+	height: 100%;
+	position: fixed;
+	right: 0px;
+	background: #ffffff;
+	border-left: solid 1px #ddd5cc;
+	display: block;
+}
+	#ticker-twitter-timeline-container {
+		width: 301px;
+		//height: ~"calc(100% - 249px)";
+		height: 100%;
+		float: left;
+		margin-left: -1px;
+		border-bottom: solid 1px #ddd5cc;
+		overflow-y: hidden;
+		display: block;
+	}	#ticker .twitter-timeline {
+			width: 100%;
+			height: 100%;
+			border: none;
+			outline: none;
+			overflow-y: hidden;
+		}
+
+		.ticker-twitter-corner-concealer {
+			width: 5px;
+			height: 5px;
+			position: fixed;
+			top: 0px;
+			margin-left: 1px;
+			background: #ffffff;
+			display: block;
+		} .ticker-twitter-corner-concealer.ticker-twitter-corner-concealer-right {
+			right: 0px;
+		}
+
+	#ticker-ad {
+		width: 302px;
+		height: 250px;
+		position: fixed;
+		right: 0px;
+		bottom: 0px;
+		display: none;
+	}
+
+
+/* Ticker disappears */
+@media screen and (max-width: 1097px) { /* 482px + 60px + 2(82px) [logo width] + 2(30px) [logo margins] */
+    #ticker {
+    	display: none;
+    }
+}

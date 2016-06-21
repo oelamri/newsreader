@@ -1,0 +1,19 @@
+<div class="form-selector" ng-show="true">
+    <!-- Image selctions -->
+    <div class="form-selection"
+         ng-repeat="suggestedImage in suggestedImages"
+         ng-click="selectImage($index)"
+         ng-class="{'form-selection-selected': suggestedImage.selected}">
+        <span class="form-selection-corner" ng-show="suggestedImage.selected"></span>
+        <span class="form-selection-icon icon-check-mark" ng-show="suggestedImage.selected"></span>
+        <img ng-src="{{suggestedImage.originalUrl}}" />
+    </div>
+    <!-- Upload Button -->
+    <div class="form-selection">
+        <input class="form-selection-input"
+               type="file"
+               ng-file-select="addLocalImage($files)"
+               accept="image/*"/>
+        <div class="form-selection-button"><span class="icon-upload-image"></span></div>
+    </div>
+</div>

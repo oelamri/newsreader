@@ -1,0 +1,31 @@
+<div class="post" ng-click="goToLink('<%- posts[i].shortUrl %>')">
+    <div class="post-header">
+        <img class="post-header-thumbnail" src="<%- posts[i].thumbnail.medium %>"/>
+
+        <div class="post-header-text"><!--
+            <%    %>
+            <% for(var j = 0; j < posts[i].content.length; j++) { %>
+                <% if(posts[i].content[j].type == 'string') { %>
+                    --><span><%- posts[i].content[j].content %></span><!--
+                <% } else if(posts[i].content[j].type == 'topic') { %>
+                    --><span><a
+                        ng-click="goToLink('https://twitter.com/hashtag/<%- posts[i].content[j].topic.hashtag %>'); $event.stopPropagation();"><%- posts[i].content[j].topic.name %></a></span><!--
+                <% } %>
+            <% } %>
+        --></div>
+        <!-- IMPORTANT: Comments are used to eliminate whitespace -->
+    </div>
+    <div class="post-image">
+        <img src="<%- posts[i].picture.large %>"/>
+    </div>
+    <div class="post-footer">
+        <div class="post-footer-profile">
+            <a href="/user/<%- posts[i].poster.username %>"><img src="<%- posts[i].poster.picture.large %>"/></a>
+
+            <div class="post-footer-profile-name"><a
+                        href="/user/<%- posts[i].poster.username %>"><%- posts[i].poster.fullname %></a></div>
+        </div>
+        <div class="btn btn-half btn-save" ng-controller="FeedController" ng-click="upvotePost(<%= posts[i]._id %>)"><span class="btn-symbol icon-triangle"></span></div>
+        <div class="post-footer-counter" ng-controller="FeedController">{{getPostUpvotes(<%= posts[i]._id %>)}}</div>
+    </div>
+</div>

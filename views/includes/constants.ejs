@@ -1,0 +1,21 @@
+<script>
+var data = new Object(<%- data %>);
+
+//TODO: Change the following constant to read from server response
+
+app.constant('CONFIG', {
+
+    API: {
+        BASE_URL: 'http://localhost:5001'
+    },
+    CLOUDINARY: {
+        CLOUD_NAME: 'hjobxkhvq',
+        API_KEY: '311998699786184', 
+        UPLOAD_PRESET: 'egtzo9rg'
+    },
+    ALGOLIA: {
+        APPLICATION_ID: 'O1JG6K31FG',
+        API_KEY: '32048f791371872f2f02dee69e2e30d6'
+    }
+});
+</script>

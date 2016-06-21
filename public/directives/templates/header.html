@@ -1,0 +1,36 @@
+<div>
+    <div id="header-container">
+        <div id="header" class="with-stats">
+            <img id="header-thumbnail" class="thumbnail" ng-src="{{subject.picture.medium}}"/>
+            <div id="header-text">{{subject.name}}</div>
+            <div id="header-btn" class="btn"
+                 ng-class="{'btn-following': isFollowing, 'btn-follow': !isFollowing}"
+                 ng-click="follow(subject.kind, subject._id)"
+                 ng-if="subject._id != user._id">
+            </div>
+            <a id="header-btn" class="btn icon-wrench" href="/settings"
+                 ng-if="subject._id == user._id">
+            </a>
+        </div>
+    </div>
+    <div id="table-stats-container">
+        <div id="table-stats">
+            <a  class="table-stats-section"
+                ng-href="/{{subject.handle}}"
+                ng-class="{'table-stats-section-half': subject.kind === 'topic'}" >
+                <div class="table-stats-section-number">{{subject.counts.posts}}</div>
+                <div class="table-stats-section-label">POSTS</div>
+            </a>
+            <a class="table-stats-section"
+               ng-href="/{{subject.handle}}/followers"
+               ng-class="{'table-stats-section-half': subject.kind === 'topic'}" >
+                <div class="table-stats-section-number">{{subject.counts.followers}}</div>
+                <div class="table-stats-section-label">FOLLOWERS</div>
+            </a>
+            <a class="table-stats-section" ng-href="/{{subject.handle}}/following" ng-if="subject.kind === 'user'">
+                <div class="table-stats-section-number">{{subject.counts.following}}</div>
+                <div class="table-stats-section-label">FOLLOWING</div>
+            </a>
+        </div>
+    </div>
+</div>

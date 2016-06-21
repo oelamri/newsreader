@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en" ng-app="app" >
+	</head>
+		<title>Lectal</title>
+
+        <% include includes/analytics.ejs %>
+		<% include includes/dependencies.ejs %>
+        <% include includes/constants.ejs %>
+
+        <script>
+
+			<% include includes/constants.ejs %>
+
+        </script>
+
+	</head>
+	<body>
+		
+		<% include includes/sidebar.ejs %>
+        <% include includes/logo.ejs %>
+
+		<div id="frame" style="margin-top: 15px;" ng-controller="NewPostController" >
+	        
+	        
+        	<div class="form"  ng-hide="showNewTopicForm" style="margin-top: 15px;" >
+        		<!-- URL -->
+        		<div class="form-group form-group-counted" >
+        			<div class="form-counter" >1</div>
+        			<div class="form-group-section" >
+	        			<div class="form-input-container" >
+	        				<input type="text" ng-model="url" placeholder="Paste your URL here" ></input>
+	        			</div>
+	        		</div>
+        		</div>
+        		<!-- Summary -->
+        		<div class="form-group" >
+        			<div class="form-counter" >2</div>
+        			<div class="form-group-section" >
+        				<summary summary="summary" new-topic-object="newTopicObject" show-new-topic-form="showNewTopicForm" ></summary>
+        			</div>
+        		</div>
+
+        		<!-- Topic -->
+        		<topic ng-show="showNewTopicForm" class="form-above-overlay" topic-object="newTopicObject" ></topic>
+
+        		<!-- Image -->
+        		<div class="form-group" >
+        			<div class="form-counter" >3</div>
+        			<div class="form-group-section" >
+        			     <thumbnail collection="posts" image="image" format="'post'" ></thumbnail>
+        			</div>
+        		</div>
+        		<div class="form-group" >
+        			<div class="form-counter" >4</div>
+        			<div class="form-group-section" >
+        				<checkbox ng-repeat="service in services" name="service.name" pending="service.pending" enabled="service.enabled" checked="service.checked"></checkbox>
+        			</div>
+        		</div>
+
+                <div class="form-errors" ng-show="errorMessages.length" >
+                        <div class="form-error-message" ng-repeat="errorMessage in errorMessages" >{{errorMessage}}</div>
+                </div>
+
+                <div class="btn-group btn-group-wide" >
+                    <div class="btn btn-cancel" >CANCEL</div>
+                    <div class="btn btn-submit" ng-click="post()" >SUBMIT</div>
+                </div>
+
+
+        	</div>
+            <!-- Topic -->
+            <topic ng-show="showNewTopicForm" class="form-above-overlay" topic-object="newTopicObject" ></topic>
+    
+	    </div>
+	
+	</body>
+</html>
+

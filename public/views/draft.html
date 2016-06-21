@@ -1,0 +1,114 @@
+<div id="sidebar-transparent" >
+    <!-- Top -->
+    <div id="sidebar-top" >
+        <a class="btn btn-salmon" href="/" id="sidebar-btn" ><span class="btn-symbol icon-arrow-left" ></span></a>
+    </div>
+</div>
+
+<div id="frame" style="margin-top: 15px;">
+
+
+    <div class="form" ng-hide="false" style="margin-top: 15px;">
+        <!-- URL -->
+        <div class="form-group form-group-counted">
+            <div class="form-counter">1</div>
+            <div class="form-group-section">
+                <div class="form-input-container">
+                    <input type="text" ng-model="link" placeholder="Paste your URL here" />
+                </div>
+            </div>
+        </div>
+
+        <!-- Summary -->
+        <div class="form-group">
+            <div class="form-counter">2</div>
+            <div class="form-group-section">
+                <summary    summary="summary" 
+                            new-topic-object="newTopicObject"
+                            show-new-topic-form="showNewTopicForm"></summary>
+                <!-- CHANGETO: new-topic and show-topic-draft -->
+            </div>
+        </div>
+
+        <!-- Topic -->
+        <topic  ng-show="showNewTopicForm"
+                show-new-topic-form="showNewTopicForm" 
+                class="form-above-overlay"
+                topic-object="newTopicObject">
+        </topic>
+
+        <!-- Thumbnail -->
+        <div class="form-group">
+            <div class="form-counter">3</div>
+            <div class="form-group-section">
+                <div class="form-label" style="font-weight: bold; margin-bottom: -5px;">Choose a picture</div>
+                <thumbnail  image="image" 
+                            suggestion-type="'crawl'" 
+                            suggestion-query="link"
+                            image-upload-in-progress="imageUploadInProgress" 
+                            post-is-pending="postIsPending" >
+                </thumbnail>
+            </div>
+        </div>
+
+        <!-- Sharer -->
+        <div class="form-group">
+            <div class="form-counter">4</div>
+            <div class="form-group-section">
+                <div class="form-label" style="font-weight: bold; margin-bottom: -5px;">Share on</div>
+                <div class="form-selector">
+                     <!-- Twitter -->
+                    <div class="form-selection form-selection-twitter" 
+                          ng-class="{'form-selection-selected': shareOn.twitter.selected}"
+                          ng-show="shareOn.twitter.id"
+                          ng-click="shareOn.twitter.selected = !shareOn.twitter.selected">
+                        <span class="form-selection-corner-square" ></span>
+                        <span class="form-selection-icon icon-twitter"></span>
+                        <img ng-src="{{shareOn.twitter.picture}}"/>
+                    </div>
+                    <div class="form-selection form-selection-twitter" ng-hide="shareOn.twitter.id">
+                        <div class="form-selection-button"><span class="icon-twitter"></span></div>
+                    </div> 
+                    <!-- Facebook -->
+                    <div class="form-selection form-selection-facebook"
+                         ng-class="{'form-selection-selected': shareOn.facebook.selected}"
+                         ng-show="shareOn.facebook.id"
+                         ng-click="shareOn.facebook.selected = !shareOn.facebook.selected">
+                        <span class="form-selection-corner-square"></span>
+                        <span class="form-selection-icon icon-facebook-full"></span>
+                        <img ng-src="{{shareOn.facebook.picture}}"/>
+                    </div>
+                    <div class="form-selection form-selection-facebook" ng-hide="shareOn.facebook.id" ng-click="addSocialMediaService('facebook')">
+                        <div class="form-selection-button"><span class="icon-facebook-full"></span></div>
+                    </div>
+                    <!-- LinkedIn -->
+                    <div class="form-selection form-selection-linkedin"
+                        ng-class="{'form-selection-selected': shareOn.linkedin.selected}"
+                        ng-show="shareOn.linkedin.id"
+                        ng-click="shareOn.linkedin.selected = !shareOn.linkedin.selected">
+                        <span class="form-selection-corner-square"></span>
+                        <span class="form-selection-icon icon-linkedin-full"></span>
+                        <img ng-src="{{shareOn.linkedin.picture}}"/>
+                    </div>
+                    <div class="form-selection form-selection-linkedin" ng-hide="shareOn.linkedin.id" ng-click="addSocialMediaService('linkedin')">
+                        <div class="form-selection-button"><span class="icon-linkedin-full"></span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-errors" ng-show="errorMessages.length">
+            <div class="form-error-message" ng-repeat="errorMessage in errorMessages">{{errorMessage}}</div>
+        </div>
+
+        <div class="btn btn-wide btn-submit" ng-click="post()" ng-show="!postIsPending" ></div>
+        <div class="btn btn-wide btn-loading" ng-show="postIsPending" ><span class="btn-symbol icon-refresh" ></span></div>
+    </div>
+
+    <!-- Overlay -->
+    <div class="form-overlay" ng-show="showNewTopicForm" ></div>
+
+    <!-- Loader -->
+    <div class="form-loader" ng-show="postIsPending" ></div>
+
+</div>

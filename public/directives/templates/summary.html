@@ -1,0 +1,12 @@
+<contenteditable
+        data-placeholder="Summarize the link"
+        string="string" html="html"></contenteditable>
+<!-- <autosuggest ng-hide="showNewTopicForm" ></autosuggest> -->
+<autosuggest></autosuggest>
+<div class="form-btn" ng-show="(contenteditable.completing != null) && !showNewTopicForm"
+     ng-click="promptNewTopicForm()">Add a new hashtag<span class="form-btn-arrow"><span
+        class="icon-greater-than"></span></span></div>
+<div class="summary-counter"><em>{{counter.charactersRemaining}}</em> character<span ng-if="counter.charactersRemaining!=1" >s</span> and <em>{{counter.hashtagsRemaining}}</em>
+    hashtag<span ng-if="counter.hashtagsRemaining!=1" >s</span>  left
+</div>
+

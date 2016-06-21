@@ -1,0 +1,699 @@
+.btn {
+  width: 48px;
+  height: 48px !important;
+  float: left;
+  color: #aaaaaa;
+  line-height: 50px;
+  text-align: center;
+  text-indent: 0;
+  text-decoration: none;
+  /*font-family: Helvetica;
+  font-size: 13px;
+  font-weight: bold;*/
+  font-family: 'icon';
+  font-size: 21px;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #ececec;
+  border: solid 1px #cccccc;
+  border-radius: 2px;
+  display: block;
+  cursor: pointer;
+}
+
+.btn:hover {
+  color: #999999;
+  background-color: #ececec;
+  border: solid 1px #bbbbbb;
+}
+
+.btn:active {
+  background-color: #dddddd;
+  border: solid 1px #bbbbbb;
+}
+
+.btn-icon {
+  width: 30px;
+  height: 48px;
+  float: left;
+  line-height: 50px;
+  text-align: center;
+  font-family: Icon;
+  font-size: 23px;
+  font-weight: normal;
+  border-right: solid 1px #dddddd;
+  display: block;
+}
+
+.btn::selection {
+  background: transparent;
+}
+
+.btn::-moz-selection {
+  background: transparent;
+}
+
+.btn.btn-wide {
+  width: 480px;
+}
+
+.btn.btn-half {
+  width: 48px;
+}
+
+.btn .btn-symbol {
+  line-height: 48px;
+  font-size: 20px;
+}
+
+/* ANIMATIONS */
+.btn-pop {
+
+}
+
+/* GROUP */
+.btn-group {
+  width: 99px;
+  height: 50px;
+  float: left;
+  margin-top: 15px;
+  display: block;
+}
+
+.btn-group .btn {
+  width: 48px;
+  position: relative;
+  border-radius: 0px;
+  z-index: 1;
+}
+
+.btn-group .btn:hover {
+  z-index: 2;
+}
+
+.btn-group .btn.btn-disabled:hover {
+  z-index: 1;
+}
+
+.btn-group .btn:first-child {
+  border-top-left-radius: 2px;
+  border-bottom-left-radius: 2px;
+}
+
+.btn-group .btn:last-child {
+  margin-left: -1px;
+  border-top-right-radius: 2px;
+  border-bottom-right-radius: 2px;
+}
+
+.btn-group.btn-group-wide {
+  width: 482px;
+}
+
+.btn-group.btn-group-wide .btn {
+  width: 239.5px;
+}
+
+/* DISABLED */
+.btn.btn-disabled {
+  color: #cccccc;
+  background-color: #eeeeee;
+  border: solid 1px #dddddd;
+  cursor: default;
+}
+
+.btn.btn-disabled:hover {
+  background-color: #eeeeee;
+  border: solid 1px #dddddd;
+}
+
+.btn.btn-disabled:active {
+  background-color: #eeeeee;
+  border: solid 1px #dddddd;
+}
+
+.btn.btn-disabled .btn-icon {
+  line-height: 46px;
+  font-size: 22px;
+  border-right: solid 1px #dddddd;
+}
+
+.btn.btn-disabled:hover .btn-icon {
+  border-right: solid 1px #dddddd;
+}
+
+.btn.btn-post {
+  color: #ffffff;
+  background-color: #EAA980;
+  border: solid 1px #C99674;
+}
+
+.btn.btn-post:hover {
+  background-color: #EAA980;
+  border: solid 1px #AD7955;
+}
+
+.btn.btn-post:active {
+  background-color: #C99674;
+  border: solid 1px #AD7955;
+}
+
+.btn.btn-post .btn-icon {
+  line-height: 46px;
+  font-size: 22px;
+  border-right: solid 1px #C99674;
+}
+
+.btn.btn-post:hover .btn-icon {
+  border-right: solid 1px #AD7955;
+}
+
+/* LOADING */
+.btn.btn-loading {
+  position: relative;
+  z-index: 101;
+  font-size: 30px;
+  color: #ffffff;
+  background-color: #EAA980;
+  border: solid 1px #C99674;
+  cursor: default;
+}
+
+.btn.btn-loading:hover {
+  background-color: #EAA980;
+  border: solid 1px #C99674;
+}
+
+.btn.btn-loading:active {
+  background-color: #EAA980;
+  border: solid 1px #C99674;
+}
+
+.btn.btn-loading .btn-symbol {
+  margin-left: -18px;
+  //background: red;
+  position: absolute;
+  font-size: 40px;
+  -webkit-animation: spin 1.5s linear infinite;
+  -moz-animation: spin 1.5s linear infinite;
+  animation: spin 1.5s linear infinite;
+}
+
+@-moz-keyframes spin {
+  100% {
+    -moz-transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+/* FOLLOW */
+.btn.btn-follow {
+  color: #aaaaaa;
+  background-color: #ececec;
+  border: solid 1px #cccccc;
+}
+
+.btn.btn-follow:before {
+  content: "\e606";
+}
+
+.btn.btn-follow:hover {
+  color: #ffffff;
+  background-color: #74CE7C;
+  border: solid 1px #39B54A;
+}
+
+.btn.btn-follow:active {
+  background-color: #90DD90;
+  border: solid 1px #39B54A;
+}
+
+/* FOLLOWING */
+.btn.btn-following {
+  font-size: 26px;
+  color: #ffffff;
+  background-color: #74CE7C;
+  border: solid 1px #39B54A;
+}
+
+.btn.btn-following:before {
+  content: "\e60b";
+}
+
+.btn.btn-following:hover {
+  font-size: 24px;
+  background-color: #EA5C70;
+  border: solid 1px #C1212D;
+}
+
+.btn.btn-following:hover:before {
+  content: "\e602";
+}
+
+.btn.btn-following:active {
+  background-color: #EA7D8C;
+  border: solid 1px #C1212D;
+}
+
+/* UPVOTE */
+.btn.btn-upvote {
+  line-height: 48px;
+  font-size: 18px;
+  color: #aaaaaa;
+  background-color: #ececec;
+  border: solid 1px #cccccc;
+}
+
+.btn.btn-upvote:before {
+  content: "\e62f";
+}
+
+.btn.btn-upvote:hover {
+  color: #ffffff;
+  background-color: #5898F1;
+  border: solid 1px #4089EF;
+}
+
+/* UPVOTED */
+.btn.btn-upvoted {
+  line-height: 48px;
+  font-size: 18px;
+  color: #ffffff;
+  background-color: #5898F1;
+  border: solid 1px #4089EF;
+}
+
+.btn.btn-upvoted:before {
+  content: "\e62f";
+}
+
+.btn.btn-upvoted:hover {
+  color: #ffffff;
+  background-color: #5898F1;
+  border: solid 1px #4089EF;
+}
+
+/* TWITTER */
+.btn.btn-twitter {
+  color: #ffffff;
+  background-color: #73CDE5;
+  border: solid 1px #23ABDC;
+}
+
+.btn.btn-twitter:before {
+  content: "\e625";
+}
+
+.btn.btn-twitter:hover {
+  background-color: #23ABDC;
+  border: solid 1px #0787AA;
+}
+
+.btn.btn-twitter:active {
+  background-color: #089AC1;
+  border: solid 1px #0787AA;
+}
+
+/* SUBMIT */
+.btn.btn-submit {
+  font-size: 30px;
+  color: #ffffff;
+  background-color: #EAA980;
+  border: solid 1px #C99674;
+}
+
+.btn.btn-submit:after {
+  content: "\e80c";
+}
+
+.btn.btn-submit:hover {
+  background-color: #EAA980;
+  border: solid 1px #AD7955;
+}
+
+.btn.btn-submit:active {
+  background-color: #C99674;
+  border: solid 1px #AD7955;
+}
+
+/*
+.btn.btn-upvote {
+    color: #aaaaaa;
+    background-color: #ececec;
+    border: solid 1px #cccccc;
+} .btn.btn-upvote:hover {
+    color: #ffffff;
+    background-color: #529ECC;
+    border: solid 1px #427EA3;
+} .btn.btn-upvote:active {
+    background-color: #75B1D6;
+    border: solid 1px #427EA3;
+} 
+*/
+
+.btn.btn-cancel {
+  color: #aaaaaa;
+  background-color: #ececec;
+  border: solid 1px #cccccc;
+}
+
+.btn.btn-cancel:hover {
+  color: #ffffff;
+  background-color: #EA5C70;
+  border: solid 1px #C1212D;
+}
+
+.btn.btn-cancel:active {
+  background-color: #EA7D8C;
+  border: solid 1px #C1212D;
+}
+
+.btn.btn-cancel .btn-icon {
+  font-size: 20px;
+  border-right: solid 1px #cccccc;
+}
+
+.btn.btn-cancel:hover .btn-icon {
+  border-right: solid 1px #C1212D;
+}
+
+.btn.btn-cancel:active .btn-icon {
+  border-right: solid 1px #C1212D;
+}
+
+.btn.btn-blue {
+  color: #ffffff;
+  background-color: #A5D5DF;
+  border: solid 1px #8EB7BC;
+}
+
+.btn.btn-blue:hover {
+  background-color: #A5D5DF;
+  border: solid 1px #75A4AA;
+}
+
+.btn.btn-blue:active {
+  background-color: #93C3C9;
+  border: solid 1px #75A4AA;
+}
+
+.btn.btn-blue .btn-icon {
+  line-height: 50px;
+  font-size: 20px;
+  border-right: solid 1px #8EB7BC;
+}
+
+.btn.btn-blue:hover .btn-icon {
+  border-right: solid 1px #75A4AA;
+}
+
+.btn.btn-save {
+  color: #aaaaaa;
+  background-color: #ececec;
+  border: solid 1px #cccccc;
+}
+
+.btn.btn-save:hover {
+  color: #ffffff;
+  background-color: #529ECC;
+  border: solid 1px #427EA3;
+}
+
+.btn.btn-save:active {
+  background-color: #75B1D6;
+  border: solid 1px #427EA3;
+}
+
+.btn.btn-save .btn-icon {
+  font-size: 22px;
+  border-right: solid 1px #cccccc;
+}
+
+.btn.btn-save:hover .btn-icon {
+  border-right: solid 1px #427EA3;
+}
+
+.btn.btn-save:active .btn-icon {
+  border-right: solid 1px #39B54A;
+}
+
+.btn.btn-red {
+  color: #ffffff;
+  background-color: #EA5C70;
+  border: solid 1px #C1212D;
+}
+
+.btn.btn-red:hover {
+  color: #ffffff;
+  background-color: #EA5C70;
+  border: solid 1px #C1212D;
+}
+
+.btn.btn-red:active {
+  background-color: #EA7D8C;
+  border: solid 1px #C1212D;
+}
+
+.btn.btn-red .btn-icon {
+  font-size: 20px;
+  border-right: solid 1px #cccccc;
+}
+
+.btn.btn-red:hover .btn-icon {
+  border-right: solid 1px #C1212D;
+}
+
+.btn.btn-red:active .btn-icon {
+  border-right: solid 1px #C1212D;
+}
+
+.btn.btn-gray {
+  color: #aaaaaa;
+  background-color: #ececec;
+  border: solid 1px #cccccc;
+}
+
+.btn.btn-gray:hover {
+  color: #aaaaaa;
+  background-color: #ececec;
+  border: solid 1px #cccccc;
+}
+
+.btn.btn-gray:active {
+  color: #dddddd;
+  background-color: #f7f7f7;
+  border: solid 1px #dddddd;
+}
+
+.btn.btn-gray .btn-icon {
+  font-size: 20px;
+  border-right: solid 1px #cccccc;
+}
+
+.btn.btn-gray:hover .btn-icon {
+  border-right: solid 1px #cccccc;
+}
+
+.btn.btn-gray:active .btn-icon {
+  border-right: solid 1px #dddddd;
+}
+
+.btn.btn-salmon {
+  color: #A1968A;
+  background-color: #eddcca;
+  border: solid 1px #c9bcad;
+}
+
+.btn.btn-salmon:hover {
+  color: #A1968A;
+  background-color: #eddcca;
+  border: solid 1px #B5A99C;
+}
+
+.btn.btn-salmon:active {
+  color: #A1968A;
+  background-color: #D5C6B6;
+  border: solid 1px #B5A99C;
+}
+
+.btn.btn-salmon .btn-icon {
+  font-size: 20px;
+  border-right: solid 1px #cccccc;
+}
+
+.btn.btn-salmon:hover .btn-icon {
+  border-right: solid 1px #cccccc;
+}
+
+.btn.btn-salmon:active .btn-icon {
+  border-right: solid 1px #dddddd;
+}
+
+.btn.btn-facebook {
+  color: #ffffff;
+  background-color: #7C9ACA;
+  border: solid 1px #5271B1;
+}
+
+.btn.btn-facebook:hover {
+  background-color: #5271B1;
+  border: solid 1px #3b5998;
+}
+
+.btn.btn-facebook:active {
+  background-color: #3b5998;
+  border: solid 1px #5271B1;
+}
+
+.btn.btn-facebook .btn-icon {
+  font-size: 20px;
+  border-right: solid 1px #5271B1;
+}
+
+.btn.btn-facebook:hover .btn-icon {
+  border-right: solid 1px #3b5998;
+}
+
+.btn.btn-facebook:active .btn-icon {
+  border-right: solid 1px #5271B1;
+}
+
+/*
+
+.btn.btn-twitter {
+    color: #ffffff;
+    background-color: #73CDE5;
+    border: solid 1px #23ABDC;
+} .btn.btn-twitter:hover {
+    background-color: #23ABDC;
+    border: solid 1px #0787AA;
+} .btn.btn-twitter:active {
+    background-color: #089AC1;
+    border: solid 1px #0787AA;
+}   .btn.btn-twitter .btn-icon {
+        border-right: solid 1px #23ABDC;
+    } .btn.btn-twitter:hover .btn-icon {
+        border-right: solid 1px #0787AA;
+    }
+
+
+.btn.btn-follow {
+    color: #aaaaaa;
+    background-color: #ececec;
+    border: solid 1px #cccccc;
+} .btn.btn-follow:hover {
+    color: #ffffff;
+    background-color: #74CE7C;
+    border: solid 1px #39B54A;
+} .btn.btn-follow:active {
+    background-color: #90DD90;
+    border: solid 1px #39B54A;
+}   .btn.btn-follow .btn-icon {
+        font-size: 18px;
+        border-right: solid 1px #cccccc;
+    } .btn.btn-follow:hover .btn-icon {
+        border-right: solid 1px #39B54A;
+    } .btn.btn-follow:active .btn-icon {
+        border-right: solid 1px #39B54A;
+    }
+
+.btn.btn-save {
+    color: #aaaaaa;
+    background-color: #ececec;
+    border: solid 1px #cccccc;
+} .btn.btn-save:hover {
+    color: #ffffff;
+    background-color: #74CE7C;
+    border: solid 1px #39B54A;
+} .btn.btn-save:active {
+    background-color: #90DD90;
+    border: solid 1px #39B54A;
+}   .btn.btn-save .btn-icon {
+        font-size: 22px;
+        border-right: solid 1px #cccccc;
+    } .btn.btn-save:hover .btn-icon {
+        border-right: solid 1px #39B54A;
+    } .btn.btn-save:active .btn-icon {
+        border-right: solid 1px #39B54A;
+    }
+*/
+
+/*
+.Button.Following {
+	background-color: #74CE7C;
+	border: solid 1px #39B54A;
+} .Button.Following:hover {
+	background-color: #EA5C70;
+	border: solid 1px #C1212D;
+} .Button.Following:active {
+	background-color: #EA7D8C;
+	border: solid 1px #C1212D;
+}   .Button.Following .Icon {
+        font-size: 22px;
+        border-right: solid 1px #39B54A;
+    } .Button.Following:hover .Icon {
+        border-right: solid 1px #C1212D;
+    } .Button.Following:active .Icon {
+        border-right: solid 1px #C1212D;
+    }
+
+
+.Button.Logout {
+    color: #BAB0A6;
+	background-color: #EDDCCA;
+	border: solid 1px #D6C9BD;
+} .Button.Logout:hover {
+    color: #ffffff;
+	background-color: #EA5C70;
+	border: solid 1px #C1212D;
+} .Button.Logout:active {
+	background-color: #EA7D8C;
+	border: solid 1px #C1212D;
+}   .Button.Logout .Icon {
+        font-size: 21px;
+        border-right: solid 1px #C9BCAD;
+    } .Button.Logout:hover .Icon {
+        border-right: solid 1px #C1212D;
+    } .Button.Logout:active .Icon {
+        border-right: solid 1px #C1212D;
+    }
+
+.Button.Remove {
+    color: #aaaaaa;
+	background-color: #ececec;
+	border: solid 1px #cccccc;
+} .Button.Remove:hover {
+   color: #777777;
+	background-color: #ececec;
+	border: solid 1px #aaaaaa;
+} .Button.Remove:active {
+	color: #ffffff;
+	background-color: #A5D5DF;
+	border: solid 1px #8EB7BC;
+}   .Button.Remove .Icon {
+        font-size: 20px;
+        border-right: solid 1px #cccccc;
+    } .Button.Remove:hover .Icon {
+        border-right: solid 1px #aaaaaa;
+    } .Button.Remove:active .Icon {
+        border-right: solid 1px #8EB7BC;
+    }
+
+
+*/

@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en" ng-app="app">
+<head>
+
+    <% include includes/meta.ejs %>
+    <% include includes/analytics.ejs %>
+    <% include includes/dependencies.ejs %>
+
+    <script>
+
+        <% include includes/constants.ejs %>
+
+        app.constant('NOTIFICATIONS', data.notifications || []);
+        console.log('notifications:',data.notifications || []);
+
+    </script>
+
+</head>
+<body>
+
+<% include includes/sidebar.ejs %>
+<% include includes/logo.ejs %>
+
+<div id="frame">
+    <searchbox></searchbox>
+ 
+    
+    <div class="list" ng-controller="NotificationsController" >
+        <message ng-repeat="notification in notifications" content="notification" ></message>
+    </div>
+
+</div>
+
+</body>
+
+</html>

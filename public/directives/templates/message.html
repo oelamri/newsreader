@@ -1,0 +1,11 @@
+<div class="notification">
+	<div class="notification-message">
+		<a href="/{{content.who[0].username}}">{{content.who[0].fullname}}</a> {{content.who.length > 1 ? content.who.length - 1 + ' and other people' : ''}}
+		<span ng-if="content.did == 'upvote'">upvoted your </span>
+		<span ng-if="content.did == 'follow'">followed you</span>
+		<a ng-href="/post/{{content.what._id}}" ng-show="content.what" >post</a></div>
+	<div class="notification-pictures">
+		<a ng-repeat="user in content.who | limitTo:numberOfUsersShown" ng-href="/{{user.username}}" ><img ng-src="{{user.picture.medium}}" /></a>
+		<div class="notification-pictures-btn" ng-show="numberOfUsersShown < content.who.length" ng-click="showMoreUsers()"><span class="icon-plus" ></span></div>
+	</div>
+</div>

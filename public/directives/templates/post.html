@@ -1,0 +1,29 @@
+<div class="post" ng-click="">
+
+     <div class="post-header">
+
+        <a ng-href="/{{post.topic.hashtag}}">
+            <img class="post-header-thumbnail" ng-src="{{thumbnail.medium}}"/>
+        </a>
+        <div class="post-header-text">
+      <span ng-repeat="part in post.summary">
+        <span ng-switch on="part.kind">
+          <span ng-switch-when="string">{{part.content}}</span>
+          <span ng-switch-when="topic"><a ng-href="/{{part.topic.hashtag}}">{{part.topic.name}}</a></span>
+        </span>
+      </span>
+        </div>
+    </div>
+    <div class="post-image">
+        <img ng-src="{{post.picture.large}}"/>
+    </div>
+    <div class="post-footer">
+        <div class="post-footer-profile">
+            <a ng-href="/{{post.poster.username}}"><img ng-src="{{post.poster.picture.medium}}"/></a>
+            <span class="post-footer-profile-name"><a ng-href="/{{post.poster.username}}">{{post.poster.fullname}}</a></span>
+        </div>
+        <div class="btn" ng-class="{'btn-upvoted': isUpvoted, 'btn-upvote': !isUpvoted}" ng-click="upvote()"></div>
+        <div class="post-footer-counter" ng-class="{'post-footer-counter-highlighted': isUpvoted}">{{upvoteCount}}</div>
+
+    </div>
+</div>

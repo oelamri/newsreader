@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en" ng-app="app" >
+  <head>
+    <title>Lectal</title>
+
+    <% include includes/analytics.ejs %>
+    <% include includes/dependencies.ejs %>
+
+  </head>
+  <body>
+
+    <% include includes/sidebar.ejs %>
+    <% include includes/logo.ejs %>
+
+    <div id="frame" >
+      
+      <!-- TABLE -->
+      <div id="table" >
+
+        <!-- Header -->
+        <% include includes/header.ejs %>
+
+        <div id="feed" ng-controller="FeedController" >
+            <% include includes/twitter-box.ejs %>
+        </div>
+
+      </div>
+
+      <!-- Ticker -->
+      <% include includes/ticker.ejs %>
+      
+    </div>
+
+  </body>
+
+</html>

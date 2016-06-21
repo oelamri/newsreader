@@ -1,0 +1,110 @@
+#new-post-text-autosuggest {
+    width: 469px;
+    height: auto;
+    float: left;
+    background: #ffffff;
+    display: block;
+}   #new-post-text-autosuggest-entries-container {
+        width: 469px;
+        height: auto;
+        float: left;
+        padding-top: 4px;
+        padding-bottom: 4px;
+        border-top: solid 1px #cccccc;
+        display: block;
+    }   .new-post-text-autosuggest-entry {
+            width: 469px;
+            height: 48px;
+            float: left;
+            line-height: 48px;
+            color: #333333;
+            font-family: Helvetica;
+            font-size: 15px;
+            cursor: pointer;
+        } .new-post-text-autosuggest-entry.new-post-text-autosuggest-entry-active { 
+            color: #ffffff;
+            //background: #a5d5df;
+            background: #58a0c8;
+        }   .new-post-text-autosuggest-entry img {
+                width: 40px;
+                height: 40px;
+                float: left;
+                margin-top: 4px;
+                margin-left: 14px;
+                border-radius: 2px;
+                display: block;
+            }
+            .new-post-text-autosuggest-entry span {
+                float: left;
+                margin-left: 14px;
+            }
+
+    #new-post-text-autosuggest-addnew {
+        width: 469px;
+        height: 48px;
+        float: left;
+        margin-top: 4px;
+        text-align: center;
+        line-height: 48px;
+        color: #aaaaaa;
+        font-family: Helvetica;
+        font-size: 13px;
+        font-weight: bold;
+        background: #ececec;
+        border-top: solid 1px #cccccc;
+        cursor: pointer;
+    } #new-post-text-autosuggest-addnew:hover {
+        color: #888888;
+    }
+
+
+.autosuggest {
+    padding-top: 4px;
+    padding-bottom: 4px;
+}
+
+.autosuggest-entry {
+    width: 100%;
+    height: 48px;
+    float: left;
+    text-decoration: none;
+    line-height: 48px;
+    color: #333333;
+    font-family: Helvetica;
+    font-size: 15px;
+    display: block;
+    cursor: pointer;
+
+    &.autosuggest-entry-active {
+        color: #ffffff;
+        background: #58a0c8;
+    }
+
+    img {
+        width: 40px;
+        height: 40px;
+        float: left;
+        margin-top: 4px;
+        margin-left: 14px;
+        border-radius: 2px;
+        display: block;
+    }
+
+    .autosuggest-content {
+        margin-left: 14px;
+        float: left;
+        padding: 4px 0;
+
+        span {
+            display: block;
+            height: 20px;
+            line-height: 20px;
+        }
+    }
+
+    .autosuggest-handle {
+        opacity: 0.6;
+        font-size: 0.9em;
+    }
+
+}

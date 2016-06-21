@@ -1,0 +1,40 @@
+#logo-container {
+	//width: ~"calc((100% - 482px - 60px - 150px)/2)"; // With ticker
+	width: ~"calc((100% - 482px - 60px)/2)";
+	height: 100%;
+	position: fixed;
+	top: 0px;
+	//left: ~"calc(50% - 241px - 82px - 120px + 60px)";
+	left: 60px;
+	diplay: block;
+}
+
+	#logo {
+		height: 34px;
+		width: 82px;
+		margin-top: 37px;
+		margin-right: auto;
+		margin-left: auto;
+		display: block;
+		outline: none;
+	}
+		#logo img {
+			width: 100%;
+			height: 100%;
+			display: block;
+			outline: none;
+		}
+
+/* Ticker disappears */
+@media screen and (max-width: 1097px) { /* 482px + 60px + 2(82px) [logo width] + 2(30px) [logo margins] + 30px [ticker margin] + 301px [ticker]*/
+    #logo-container {
+    	width: ~"calc((100% - 482px - 60px)/2)";
+    }
+}
+
+/* Logo disappears */
+@media screen and (max-width: 766px) { /* 482px + 60px + 2(82px) [logo width] + 2(30px) [logo margins] */
+    #logo-container {
+    	display: none;
+    }
+}

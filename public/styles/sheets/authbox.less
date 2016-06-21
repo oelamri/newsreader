@@ -1,0 +1,294 @@
+.authbox {
+	width: 482px;
+	height: 1000px;
+	position: absolute !important;
+	top: 20%;
+	left: 50%;
+	margin-top: 0px !important;
+	margin-left: -241px;
+	display: block;
+}	
+	#authbox-cancel-btn {
+		position: fixed;
+		top: 15px;
+		right: 15px;
+	}
+
+	#authbox-logo {
+		width: auto;
+		height: 80px;
+		margin-right: auto;
+		margin-left: auto;
+		margin-bottom: 50px;
+		display: block;
+	}	
+/*
+.authbox .form-selection {
+	float: none;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 50px;
+}
+*/
+
+#signup, #login {
+	min-height: 425px;
+	margin-top: -262px;
+}
+#verify, #forgot, #reset {
+	min-height: 325px;
+	margin-top: -162px;
+}
+#setup {
+	min-height: 340px;
+	margin-top: -170px;
+}
+
+	#authbox-profile-picture {
+		width: 99px;
+		height: 99px;
+		position: relative;
+		float: left;
+		margin-left: 190px;
+		margin-bottom: 60px;
+		color: #bbbbbb;
+		line-height: 99px;
+		text-align: center;
+		font-size: 50px;
+		background: #ffffff;
+		border-radius: 4px;
+		display: block;
+		overflow: hidden;
+		cursor: pointer;
+	} #authbox-profile-picture:hover {
+		color: #999999;
+	}	
+		#authbox-profile-picture img {
+			width: 97px;
+			height: 97px;
+			position: absolute;
+			background: #ffffff;
+			border: solid 1px #C7C0B8;
+			border-radius: 4px;
+			display: block;
+			z-index: 100;
+		}
+		#authbox-profile-picture-btn {
+			width: 97px;
+			height: 97px;
+			position: absolute;
+			color: #bbbbbb;
+			line-height: 97px;
+			text-align: center;
+			font-size: 50px;
+			background: #ffffff;
+			border: solid 1px #ddd5cc;
+			border-radius: 62px;
+			display: block;
+			z-index: 10001;
+		} #authbox-profile-picture-btn:hover {
+			color: #999999;
+			border-color: #C7C0B8;
+			opacity: 1;
+		}	#authbox-profile-picture-btn-background {
+				width: 97px;
+				height: 97px;
+				position: absolute;
+				background: #ffffff;
+				border-radius: 62px;
+				display: block;
+				opacity: .5;
+			}
+			#authbox-profile-picture-btn-icon {
+				width: 97px;
+				height: 97px;
+				position: absolute;
+				background: transparent;
+				border-radius: 62px;
+				display: block;
+			}
+			#authbox-profile-picture-btn input {
+				width: 97px;
+				height: 97px;
+				position: absolute;
+				background: transparent;
+				border-radius: 62px;
+				display: block;
+				overflow: hidden;
+				opacity: 0;
+				cursor: pointer;
+			}
+		#authbox-profile-picture-progressbar {
+			width: 97px;
+			height: 97px;
+			position: absolute;
+			background: #ffffff;
+			border: solid 1px #ddd5cc;
+			border-radius: 62px;
+			display: block;
+			outline: none;
+			outline-color: transparent;
+		}	#authbox-profile-picture-progressbar-fill {
+				width: 0px;
+				height: 97px;
+				position: absolute;
+				background: #ddd5cc;
+				border-radius: 62px;
+				border: none;
+				display: block;
+			}
+			#authbox-profile-picture-progressbar-icon {
+				width: 97px;
+				height: 97px;
+				position: absolute;
+				color: #aaaaaa;
+				line-height: 97px;
+				text-align: center;
+				text-indent: 0px;
+				font-size: 50px;
+				background: #ffffff;
+				border-radius: 62px;
+				border: none;
+				display: block;
+				-webkit-transition-property: -webkit-transform;
+				-webkit-transition-duration: 1s;
+			    -webkit-animation-name: rotate; 
+			    -webkit-animation-duration: 1s; 
+			    -webkit-animation-iteration-count: infinite;
+			    -webkit-animation-timing-function: linear;
+			    -moz-transition-property: -moz-transform;
+			    -moz-transition-duration: 1s;
+			    -moz-animation-name: rotate; 
+			    -moz-animation-duration: 1s; 
+			    -moz-animation-iteration-count: infinite;
+			    -moz-animation-timing-function: linear;
+			}
+			@-webkit-keyframes rotate {
+			    from {-webkit-transform: rotate(0deg);}
+			    to {-webkit-transform: rotate(360deg);}
+			}
+
+			@-moz-keyframes rotate {
+			    from {-moz-transform: rotate(0deg);}
+			    to {-moz-transform: rotate(360deg);}
+			}
+
+	#authbox-inputs-holder {
+		width: 265px;
+		height: auto;
+		float: left;
+		margin-left: 29px;
+		background: #FFFFFF;
+        border: solid 1px #ddd5cc;
+        border-radius: 2px;
+        display: block;
+        overflow: hidden;
+	}	.authbox-input-container {
+			width: 265px;
+			height: 48px;
+			float: left;
+			border-top: solid 1px #ddd5cc;
+			display: block;
+		} #authbox-inputs-holder .authbox-input-container:first-child {
+			border-top: none;
+		}	.authbox-input {
+				height: 19px;
+	            width: 235px;
+	            float: left;
+	            margin-top: 15px;
+	            margin-left: 15px;
+	            line-height: 19px;
+	            font-family: Helvetica;
+	            font-size: 15px;
+	            border: none;
+			} .authbox-input.authbox-input-inactive {
+				color: #bbbbbb;
+			}
+
+	#authbox-errors {
+		width: 267px;
+		height: auto;
+		float: left;
+		margin-left: 29px;
+		margin-top: 15px;
+		border-radius: 2px;
+		background: transparent;
+		display: block;
+		overflow: hidden;
+	}	.authbox-error-message {
+			width: 237px;
+			height: auto;
+			float: left;
+			padding: 15px;
+			margin-top: 1px;
+			text-align: center;
+			line-height: 21px;
+			color: #ffffff;
+			font-family: Helvetica, arial;
+			font-size: 14px;
+			background: #C3BBB1;
+			display: block;
+		} #authbox-errors .authbox-error-message:first-child {
+			margin-top: 0px;
+		}
+
+	#authbox-buttons-container {
+		width: 267px;
+		height: 50px;
+		margin-top: 15px;
+		margin-left: 29px;
+		float: left;
+		display: block;
+	}	#authbox-buttons-container .btn:nth-child(2) {
+			float: right;
+		}
+
+#motto {
+	width: 325px;
+	height: 50px;
+	float: left;
+	margin-top: 50px;
+	line-height: 50px;
+	text-align: center;
+	color: #BAB0A4;
+	//font-family: Montserrat Alternates;
+	font-family: Helvetica;
+	font-weight: bold;
+	font-size: 28px;
+	display: block;
+}
+
+#auth-page-footer {
+	width: 100%;
+	height: 50px;
+	position: fixed;
+	bottom: 0px;
+	left: 0px;
+	line-height: 50px;
+	color: #BAB0A4;
+	font-family: Helvetica;
+	font-weight: bold;
+	font-size: 13px;
+	display: block;
+}	#auth-page-footer-left {
+		float: left;
+		margin-left: 15px;
+	}	#auth-page-footer-left span {
+			 color: #9886BF;
+		}
+		#auth-page-footer-left a {
+			margin-right: 10px;
+		}	 
+
+	#auth-page-footer-right {
+		float: right;
+		margin-right: 15px;
+	}
+	#auth-page-footer-right a {
+			margin-left: 10px;
+		}	
+
+	#auth-page-footer a, #auth-page-footer a:visited {
+		text-decoration: none;
+		color: #BAB0A4;
+	}

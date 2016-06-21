@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="cleartype" content="on">
+    <title></title>
+  </head>
+  <body>
+    <script>
+      window.opener.oauthCallback(<%- error && JSON.stringify(error) || '""' %>, <%- (!error && info && JSON.stringify(info)) || '""' %>);
+      window.close();
+    </script>
+  </body>
+</html>

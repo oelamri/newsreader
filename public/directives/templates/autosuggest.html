@@ -1,0 +1,17 @@
+<div class="autosuggest">
+    <div ng-repeat="(row, suggestion) in autosuggest.suggestions" class="autosuggest-entry"
+         ng-class="{'autosuggest-entry-active': row === autosuggest.activeSuggestion}" data-model="{{suggestion.model}}"
+         ng-mouseover="autosuggest.highlight(row)" ng-click="autosuggest.choose(row)">
+        <img ng-src="{{suggestion.picture.medium}}"/>
+
+        <div class="autosuggest-content">
+            <span class="autosuggest-name">{{suggestion.name}}</span>
+            <span class="autosuggest-handle" data-model="user" ><!--
+                --><em ng-switch="suggestion.kind"><!--
+                    --><em ng-switch-when="USER">@</em><!--
+                    --><em ng-switch-when="TOPIC">#</em><!--
+                --></em><!--
+                -->{{suggestion.handle}}</span>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en" ng-app="app">
+<head>
+
+    <% include includes/meta.ejs %>
+    <% include includes/analytics.ejs %>
+    <% include includes/dependencies.ejs %>
+
+    <script>
+
+        <% include includes/constants.ejs %>
+
+        app.constant('SUBJECT', {
+            kind: data.kind,
+            _id: data._id,
+            name: data.name,
+            handle: data.handle,
+            picture: data.picture,
+            counts: data.counts
+        });
+
+        app.constant('TWITTER_FOLLOWERS', data.twitterFollowers);
+        app.constant('TWITTER_FRIENDS', data.twitterFriends);
+
+    </script>
+
+</head>
+<body>
+
+<% include includes/sidebar.ejs %>
+<% include includes/logo.ejs %>
+
+<div id="frame">
+
+
+    <div class="list" ng-controller="InviteController" >
+        <item ng-repeat="follower in followers" content="follower" ></item>
+    </div>
+
+</div>
+
+</body>
+
+</html>

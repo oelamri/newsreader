@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en" ng-app="app">
+</head>
+<title>Lectal</title>
+
+<% include includes/analytics.ejs %>
+<% include includes/dependencies.ejs %>
+
+<script>
+
+    <% include includes/constants.ejs %>
+
+    app.constant('MESSAGE', data.message);
+    app.constant('FIELDS', data.fields);
+
+
+</script>
+
+
+
+</head>
+
+
+<body>
+
+<!-- Authbox -->
+<div class="form authbox" >
+
+    <!-- Message -->
+    <div class="form-errors" >
+        <div class="form-error-message" >Before you can post, you must verify your email. Please click the link in the email we sent you.</div>
+    </div>
+
+    <!-- Submit -->
+    <a class="btn btn-wide btn-submit" href="/resend_verification" >RESEND EMAIL</a>
+
+</div>
+
+</body>
+</html>

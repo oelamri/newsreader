@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en" ng-app="app">
+<head>
+    <title>Lectal</title>
+
+    <% email = ""; %>
+    <% message = ""; %>
+
+    <% include includes/dependencies.ejs %>
+
+    <script>
+        <% include includes/constants.ejs %>
+
+    </script>
+</head>
+<body>
+
+<!-- Close Button -->
+<a class="btn btn-half btn-salmon" id="authbox-cancel-btn" href="/logout" id="sidebar-btn">
+    <span class="btn-symbol icon-x-mark"></span>
+</a>
+
+<!-- Authbox -->
+<form id="login" class="form authbox" ng-controller="LoginController" method="post" name="form" action="/login_local"
+      enctype="multipart/form-data">
+
+    <!-- Logo -->
+    <img id="authbox-logo" src="/styles/images/logo.png"/>
+
+    <!-- Inputs -->
+    <div class="form-group">
+        <div class="form-input-container">
+            <div class="form-input-label">Email</div>
+            <input type="text" ng-model="credentials.email" placeholder="yourname@example.com" class="with-label"
+                   name="email"
+                    <% if (email.length === 0) { %>
+                   autofocus
+                    <% } %>
+            ></input>
+        </div>
+        <div class="form-input-container">
+            <div class="form-input-label">Password</div>
+            <input type="password" ng-model="credentials.password" placeholder="Password" class="with-label"
+                   name="password"
+                    <% if (email.length > 0) { %>
+                   autofocus
+                    <% } %>
+            ></input>
+        </div>
+    </div>
+
+    <!-- Errors -->
+    <div class="form-errors" ng-show="errorMessages.length">
+        <div class="form-error-message" ng-repeat="errorMessage in errorMessages">{{errorMessage}}</div>
+    </div>
+
+    <!-- Submit -->
+    <div type="submit" ng-click="login()" class="btn btn-wide btn-submit" id="btn-setup"></div>
+
+    <!-- Twitter Login 
+    <a class="btn btn-wide btn-twitter" href="/login" ></a> -->
+</form>
+
+</body>
+</html>

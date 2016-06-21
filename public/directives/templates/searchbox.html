@@ -1,0 +1,14 @@
+<form method="get">
+    <div id="searchbox-holder">
+        <div id="searchbox-container">
+            <input autocomplete="off" spellcheck="false" name="q" ng-model="autosuggest.query" ng-blur="blur()"
+                   ng-focus="autoSuggest()" ng-keydown="handleKeyDown($event)" ng-keyup="handleKeyUp($event)"
+                   type="text" id="searchbox-input" placeholder="Search for people, places, and things"/>
+            <div id="searchbox-icon" ><span class="icon-search-3" ></span></div>
+        </div>
+        <div id="searchbox-autosuggest-holder" class="searchbox-autosuggest"
+             ng-show="autosuggest.suggestions.length > 0" tabindex="-1">
+            <autosuggest></autosuggest>
+        </div>
+    </div>
+</form>

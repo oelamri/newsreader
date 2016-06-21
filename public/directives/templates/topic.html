@@ -1,0 +1,34 @@
+<div class="form-group" style="margin-top: 10px;">
+    <div class="form-title">
+        New hashtag
+        <div class="form-title-close" ng-click="cancelNewTopic()" ><span class="icon-x-mark" ></span></div>
+    </div>
+    <div class="form-input-container">
+        <div class="form-input-label">Name</div>
+        <input type="text" ng-model="newTopic.name" placeholder="Like  This" class="with-label"
+               name="email" />
+    </div>
+    <div class="form-input-container">
+        <div class="form-input-label">Hashtag</div>
+        <input type="text" ng-model="newTopic.hashtag" placeholder="#LikeThis" class="with-label"
+               name="fullname" />
+    </div>
+    <div class="form-divider" ></div>
+    <div class="form-selection-label" >
+        <div class="form-selection-label-icon" ><span class="icon-picture" ></span></div>
+    </div>
+    <thumbnail  image="newTopic.picture"
+                suggestion-type="'search'"
+                suggestion-query="newTopic.name"
+                image-upload-in-progress="imageUploadInProgress" >
+    </thumbnail>
+    <div class="form-group-overlay" ng-show="topicIsPending" ></div>
+</div>
+
+<!-- Error Message -->
+<div class="form-errors" ng-show="errorMessages.length">
+    <div class="form-error-message" ng-repeat="errorMessage in errorMessages">{{errorMessage}}</div>
+</div>
+
+<div class="btn btn-wide btn-post" ng-click="addNewTopic()" ng-hide="topicIsPending" style="margin-bottom: 30px;" ><span class="btn-symbol icon-plus" style="font-size: 26px;" ></span></div>
+<div class="btn btn-wide btn-loading" ng-show="topicIsPending" style="margin-bottom: 30px;" ><span class="btn-symbol icon-refresh" ></span></div>

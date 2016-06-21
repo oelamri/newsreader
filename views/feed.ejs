@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en" ng-app="app">
+<head>
+
+    <% include includes/meta.ejs %>
+    <% include includes/analytics.ejs %>
+    <% include includes/dependencies.ejs %>
+
+    <script>
+
+        <% include includes/constants.ejs %>
+
+        app.constant('POSTS', {
+            initial: data.posts,
+            remaining: data.remainingPosts
+        });
+
+
+    </script>
+
+</head>
+<body>
+
+<% include includes/sidebar.ejs %>
+<% include includes/logo.ejs %>
+
+<div id="frame">
+
+    <searchbox></searchbox>
+ 
+    <div id="table">
+        <div id="feed" ng-controller="FeedController" >
+            <post ng-repeat="post in posts" post="post" ></post>
+        </div>
+    </div>
+
+</div>
+
+</body>
+
+</html>

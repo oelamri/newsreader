@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en" ng-app="app">
+</head>
+<title>Lectal</title>
+
+<!-- Styles -->
+<link rel="stylesheet" href="/styles/styles.css">
+
+<% include includes/analytics.ejs %>
+<% include includes/dependencies.ejs %>
+
+<script>
+
+    <% include includes/constants.ejs %>
+
+    app.constant('MESSAGE', data.message);
+    app.constant('FIELDS', data.fields);
+
+</script>
+
+
+</head>
+<body>
+
+-->
+
+<!-- Authbox -->
+<form id="setup" class="authbox" ng-controller="SetupController" method="post" name="form" action="/setup"
+      enctype="multipart/form-data">
+    <div id="authbox-profile-picture">
+        <img ng-src="{{credentials.picture.large}}" ng-show="profilePictureUploaded && !imageUploadInProcess"/>
+
+        <div id="authbox-profile-picture-btn" ng-show="!imageUploadInProcess">
+            <div id="authbox-profile-picture-btn-background"></div>
+            <div id="authbox-profile-picture-btn-icon"><span class="icon-upload-image"></span></div>
+            <input id="authbox-profile-picture-btn-input" type="file" ng-file-select="uploadProfilePicture($files)"/>
+            <input ng-value="credentials.picture.original" type="hidden" name="originalPicture"></input>
+            <input ng-value="credentials.picture.large" type="hidden" name="largePicture"></input>
+            <input ng-value="credentials.picture.medium" type="hidden" name="mediumPicture"></input>
+            <input ng-value="credentials.picture.small" type="hidden" name="smallPicture"></input>
+        </div>
+        <div id="authbox-profile-picture-progressbar" ng-show="true">
+            <div id="authbox-profile-picture-progressbar-icon"><span class="icon-refresh"></span></div>
+        </div>
+    </div>
+    <div id="authbox-inputs-holder">
+        <div class="authbox-input-container">
+            <input ng-model="credentials.email" type="text" name="email" class="authbox-input" id="authbox-email"
+                   placeholder="Email"></input>
+        </div>
+        <div class="authbox-input-container">
+            <input ng-model="credentials.fullname" type="text" name="fullname" class="authbox-input"
+                   id="authbox-fullname" placeholder="Full Name"></input>
+        </div>
+        <div class="authbox-input-container">
+            <input ng-model="credentials.username" type="text" name="username" autofocus class="authbox-input"
+                   id="authbox-username" placeholder="Username"></input>
+        </div>
+    </div>
+    <div id="authbox-errors" ng-show="errorMessages.length">
+        <div class="authbox-error-message" ng-repeat="errorMessage in errorMessages">{{errorMessage}}</div>
+    </div>
+    <div id="authbox-buttons-container">
+        <a class="btn btn-cancel" href="/logout">CANCEL</a>
+
+        <div type="submit" ng-click="setup()" class="btn btn-post" id="btn-setup">SUBMIT</div>
+    </div>
+</form>
+
+</body>
+</html>

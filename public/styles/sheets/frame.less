@@ -1,0 +1,19 @@
+#frame {
+    width: 482px;
+    height: auto;
+    position: absolute;
+    top: 0px;
+	//left: ~"calc(50% - 241px + 30px - 75px)"; // Accounting for own width, sidebar, ticker/2
+    left: ~"calc(50% - 241px + 30px)"; // No ticker
+    // margin-right: auto;
+    // margin-left: auto;
+    overflow: hidden;
+    display: block;
+}
+
+/* Ticker disappears */
+@media screen and (max-width: 1097px) { 
+    #frame {
+    	left: ~"calc(50% - 241px + 30px)";
+    }
+}

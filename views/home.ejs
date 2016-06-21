@@ -1,0 +1,84 @@
+<html>
+<head>
+    <title>Lectal</title>
+    <link rel="stylesheet" href="/styles/styles.css">
+    <% include includes/dependencies.ejs %>
+
+</head>
+<body>
+<% include includes/sidebar.ejs %>
+
+<div style="margin-left: 75px; margin-top: 20px">
+
+    <script>
+
+        <% include includes/constants.ejs %>
+
+        var oauthCallback = function (err, info) {
+            var $fb = $('#facebookAuth');
+            if (err) {
+                $fb.after('<div>Error:' + err + '</div>');
+            }
+            else {
+                $fb.text('Now authenticated as ' + info.name);
+            }
+        }
+
+        app.constant("OAUTH_CALLBACK", oauthCallback);
+
+
+    </script>
+
+    <div id='facebookAuth'>
+
+        <% if (user.accounts.facebook && user.accounts.facebook.id) { %>
+        Authenticated on facebook as <%= user.accounts.facebook.name %>
+        <% } else { %>
+        <a target='_blank' href='/auth/facebook'>authenticate facebook</a>
+        <% } %>
+    </div>
+
+    <h1>Post a topic</h1>
+
+    <form action="/api/topics" method="post" enctype="multipart/form-data">
+        <input name="name" placeholder="name" value="Barak Obama"><br>
+        <input name="hashtag" placeholder="hashtag" value="BarakObama"><br>
+        <input type="file" name="myFile"/><br>
+        <button type="submit">Submit</button>
+    </form>
+
+    <h1>Topic typeahead demo</h1>
+
+    <form>
+        <div id="bloodhound">
+            <input class="typeahead" type="text" autocomplete="off" spellcheck="false" id="search" placeholder="Topic">
+        </div>
+    </form>
+    <script>
+        (function () {
+            var topics = new Bloodhound({
+                datumTokenizer: _.property('names'),
+                queryTokenizer: Bloodhound.tokenizers.whitespace,
+                remote: '/api/topics?q=%QUERY'
+            });
+
+            topics.initialize();
+
+            $('#search').typeahead({
+                hint: true,
+                highlight: false,
+                minLength: 1
+            }, {
+                name: 'topics',
+                displayKey: 'name',
+                source: topics.ttAdapter(),
+                templates: {
+                    suggestion: _.template('<div><span><' + '%- name %></span><img src="<' + '%- image.small %>"></div>'),
+                }
+            });
+        }());
+    </script>
+</div>
+
+</body>
+</html>
